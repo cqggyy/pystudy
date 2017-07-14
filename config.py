@@ -10,7 +10,7 @@ class Config:
 
 	@staticmethod
 	def init_app(app):
-		pass
+                pass
 
 class DevelopmentConfig(Config):
 	"""docstring for DevelopmentConfig"""
@@ -21,18 +21,18 @@ class DevelopmentConfig(Config):
 	MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 	MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 	SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-									'mysql+pymysql://ggyy:samsung@192.168.1.240/flask'
+				'mysql+pymysql://ggyy:samsung@192.168.1.240/flask'
 
 class TestingConfig(Config):
 	"""docstring for DevelopmentConfig"""
 	TESTING = True
 	SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
-									'mysql+pymysql://ggyy:samsung@192.168.1.240/flask'
+				'mysql+pymysql://ggyy:samsung@192.168.1.240/flask'
 
 class ProductionConfig(Config):
 	"""docstring for DevelopmentConfig"""
 	SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-									'mysql+pymysql://ggyy:samsung@192.168.1.240/flask'
+				'mysql+pymysql://ggyy:samsung@192.168.1.240/flask'
 
 config = {
 	'development': DevelopmentConfig,
